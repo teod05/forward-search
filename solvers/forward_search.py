@@ -87,9 +87,7 @@ def forward_search(knowledge, query):
         if not new_knowledge: #if there is no new knowlede it gives up
             return None
             
-        knowledge_base = And(knowledge_base, *new_knowledge)
-        print(f"Updated knowledge base: {knowledge_base}") # * is an unpacking operator (passes to And() as a seperate Argument)
-
+        knowledge_base.add(*new_knowledge) # * is an unpacking operator (passes to And() as a seperate Argument)
 
 
             
